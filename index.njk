@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ home.title }}</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+<header>
+  <h1>{{ home.title }}</h1>
+  <p>{{ home.hero }}</p>
+</header>
+
+<section class="services">
+  <h2>What We Do</h2>
+  <div class="grid">
+    {% for service in collections.services %}
+    <div class="card">
+      <h3>{{ service.data.title }}</h3>
+      <p>{{ service.data.description }}</p>
+      <p>{{ service.data.price }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="gallery">
+  <h2>Gallery</h2>
+  <div class="grid">
+    {% for image in collections.gallery %}
+    <div class="card">
+      <img src="{{ image.data.image }}" alt="{{ image.data.caption }}" style="width:100%; border-radius:12px;">
+      <p>{{ image.data.caption }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<footer>
+  <p>© HackYourSoul</p>
+  <small><a href="/admin">Admin Login</a></small>
+</footer>
+</body>
+</html>
