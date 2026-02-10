@@ -1,0 +1,63 @@
+#!/bin/bash
+
+# deploy_hoarders_hope_full.sh
+# Purpose: Fully enhanced Hoarders Hope website deployment script
+
+# --- Step 1: Setup folders ---
+echo "Creating project folders..."
+mkdir -p HoardersHope/{css,images}
+cd HoardersHope || exit
+
+# --- Step 2: Write HTML ---
+echo "Writing enhanced HTML..."
+cat > index.html << 'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hoarders Hope | Cleaning & Hoarding Services</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header id="home">
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="cta">Book Estimate</a>
+  </nav>
+  <div class="hero-content">
+    <h1>Hoarders Hope</h1>
+    <p>Compassionate hoarding cleanup, home cleaning, and moving services. Friendly, affordable, and judgment‑free.</p>
+  </div>
+</header>
+
+<section class="container services" id="services">
+  <h2>Our Services</h2>
+  <div class="grid grid-3">
+    <div class="card">
+      <h3>Hoarding Cleanup</h3>
+      <p>From mild clutter to extreme hoarding situations. Respectful, discreet, and supportive service every step of the way.</p>
+    </div>
+    <div class="card">
+      <h3>Home Cleaning</h3>
+      <p>Standard and deep cleaning for homes, apartments, and rentals. We help restore comfort and peace of mind.</p>
+    </div>
+    <div class="card">
+      <h3>Moving Services</h3>
+      <p>Packing, moving, and haul‑away assistance. Perfect for downsizing, relocations, or cleanouts.</p>
+    </div>
+  </div>
+
+  <div class="image-strip">
+    <img src="images/clean1.jpg" alt="Before and after cleanup" />
+    <img src="images/clean2.jpg" alt="Room organization" />
+    <img src="images/clean3.jpg" alt="Living space cleaned" />
+    <img src="images/clean4.jpg" alt="Home cleaning results" />
+  </div>
+
+  <div class="estimates">
+    <p><strong>Estimated Pricing:</strong></p>
